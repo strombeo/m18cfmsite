@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Madden.League>
+@{
+    ViewBag.Title = "Leagues";
+}
+
+<h2>Leagues</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            League Name
+        </th>
+        <th>ImportTeams</th>
+        <th>ImportPlayers</th>
+    </tr>
+    @foreach (var league in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(league.Name, "Teams", "Madden", new { leagueId = league.ID }, null)
+            </td>
+            <td>
+                <!-- Upload Form -->
+                @using (Html.BeginForm(
+                    "ImportTeams", 
+                    "Import", 
+                    new { leagueId = league.ID }, 
+                    FormMethod.Post, 
+                    new { enctype = "multipart/form-data" }
+                    ))
+                {
+                    @Html.TextBox("file", "", new { type = "file" })
+                    <input type="submit" value="Upload" />
+                    @ViewBag.Message
+                }
+            </td>
+            <td>
+                <!-- Upload Form -->
+                @using (Html.BeginForm(
+                    "ImportPlayers", 
+                    "Import", 
+                    new { leagueId = league.ID }, 
+                    FormMethod.Post, 
+                    new { enctype = "multipart/form-data" }
+                    ))
+                {
+                    @Html.TextBox("file", "", new { type = "file" })
+                    <input type="submit" value="Upload" />
+                    @ViewBag.Message
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+

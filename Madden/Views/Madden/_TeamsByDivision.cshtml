@@ -1,0 +1,170 @@
+﻿@model IEnumerable<Madden.Team>
+
+<h3>Divisional Standings</h3>
+
+<div id="DivisionalStandingsDiv" style="width:100%; float:none">
+
+    @* NFC DIV Containter *@
+    <div class="ConferenceStandingsDiv" style="width:100%; float:none">
+
+        @* NFC North *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>NFC North</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "NFC North"))
+        {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+        }
+        </table>
+
+        @* NFC South *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>NFC South</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "NFC South"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @* NFC East *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>NFC East</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "NFC East"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @* NFC West *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>NFC West</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "NFC West"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+
+    @* AFC DIV Container *@
+    <div class="ConferenceStandingsDiv" style="width:100%; float:none">
+
+        @* AFC North *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>AFC North</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "AFC North"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @* AFC South *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>AFC South</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "AFC South"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @* AFC East *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>AFC East</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "AFC East"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+        @* AFC West *@
+        <table class="DivisionalStandingsTable" style="float:left">
+            <tr>
+                <th>AFC West</th>
+                <th></th>
+            </tr>
+            @foreach (var team in Model.Where(m => m.Division == "AFC West"))
+            {
+                <tr>
+                    <td>
+                        @team.Name
+                    </td>
+                    <td>
+                        (@team.Wins-@team.Losses-@team.Ties)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>

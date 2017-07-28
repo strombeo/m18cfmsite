@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Madden" Class="MaddenDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Madden;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MaddenConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Leagues" Member="Leagues">
+    <Type Name="League">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teams" Member="Teams">
+    <Type Name="Team">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LeagueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CurrentYear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentWeek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Conference" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OverallRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SalaryCapLimit" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalaryCapSpent" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalaryCapAvailable" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Wins" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Losses" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ties" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PointsFor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PointsAgainst" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NetPoints" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OFF_TotalYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OFF_RushYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OFF_PassYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEF_TotalYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEF_RushYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DEF_PashYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TurnoverDifferential" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Players" Member="Players">
+    <Type Name="Player">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LeagueID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Weight" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Overall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YearsPro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Development" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsFreeAgent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Scheme" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Confidence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractSalary" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ContractBonus" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ContractLength" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractYearsLeft" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractCapHit" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ContractReleasePenalty" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ContractReleaseNetSavings" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Awareness" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Speed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Acceleration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Agility" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Strength" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Catch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Jump" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KickReturn" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Stamina" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Injury" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Toughness" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Durability" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Elusiveness" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowPower" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowAccuracy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowAccuracyShort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowAccuracyMid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowAccuracyDeep" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowOnRun" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlayAction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BallCarrierVision" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucking" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JukeMove" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpinMove" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StiffArm" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Release" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RouteRunning" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CatchInTraffic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpectacularCatch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunBlock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PassBlock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImpactBlock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tackle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HitPower" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlayRecognition" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pursuit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BlockShed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PowerMoves" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinesseMoves" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ManCover" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ZoneCover" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PressCover" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KickPower" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KickAccuracy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_ALL_Predictable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_ALL_Clutch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_ALL_Penalty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_CoverBall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_FightForYards" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_DropOpenPasses" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_FeetInBounds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_PossesionCatch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_AggressiveCatch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_OFF_CatchOnTheRun" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_QB_ThrowBallAway" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_QB_SensePressure" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_QB_TightSpiral" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_QB_Style" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_QB_ForcePass" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_BullRush" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_SwimMove" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_SpinMove" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_HighMotor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_BigHitter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_StripBall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trait_DEF_PlayBall" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

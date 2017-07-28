@@ -1,0 +1,1255 @@
+﻿@model IEnumerable<Madden.Player>
+@{
+    ViewBag.Title = "Players";
+}
+
+<h2>Players</h2>
+
+
+<div id="Offensive Skill Positions">
+
+    <table id="QBtable" class="table">
+        <tr>
+            <th>QB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />5%</th>
+
+            <th title="Throw Power">THP<br />26%</th>
+
+            <th title="Throw Accuracy Short">TAS<br />18%</th>
+            <th title="Throw Accuracy Mid">TAM<br />18%</th>
+
+            <th title="Throw Accuracy Deep">TAD<br />12%</th>
+            <th title="Awareness">AWR<br />12%</th>
+
+            <th title="Play Action">PLA<br />4%</th>
+            <th title="Throw On Run">TOR<br />2%</th>
+            <th title="Agility">AGI<br />2%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "QB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.ThrowPower</td>
+
+                <td>@player.ThrowAccuracyShort</td>
+                <td>@player.ThrowAccuracyMid</td>
+
+                <td>@player.ThrowAccuracyDeep</td>
+                <td>@player.Awareness</td>
+
+                <td>@player.PlayAction</td>
+                <td>@player.ThrowOnRun</td>
+                <td>@player.Agility</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="HBtable" class="table">
+        <tr>
+            <th>HB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />13%</th>
+
+            <th title="Carrying">CAR<br />13%</th>
+            <th title="Ball Carrier Vision">BCV<br />13%</th>
+
+            <th title="Agility">AGI<br />8%</th>
+            <th title="Acceleration">ACC<br />8%</th>
+            <th title="Awareness">AWR<br />8%</th>
+            <th title="Trucking">TRK<br />8%</th>
+            <th title="Elusiveness">ELU<br />8%</th>
+
+            <th title="Catching">CTH<br />4%</th>
+            <th title="Spin Move">SPN<br />4%</th>
+            <th title="Juke Move">JUK<br />4%</th>
+
+            <th title="Strength">STR<br />3%</th>
+            <th title="Route Running">RRN<br />3%</th>
+            <th title="Stiff Arm">STF<br />2%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "HB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+
+                <td>@player.Carry</td>
+                <td>@player.BallCarrierVision</td>
+
+                <td>@player.Agility</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Awareness</td>
+                <td>@player.Trucking</td>
+                <td>@player.Elusiveness</td>
+
+                <td>@player.Catch</td>
+                <td>@player.SpinMove</td>
+                <td>@player.JukeMove</td>
+
+                <td>@player.Strength</td>
+                <td>@player.RouteRunning</td>
+                <td>@player.StiffArm</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="FBtable" class="table">
+        <tr>
+            <th>FB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />5%</th>
+
+            <th title="Impact Blocking">IBL<br />22%</th>
+            <th title="Run Block">RBK<br />16%</th>
+            <th title="Awareness">AWR<br />15%</th>
+
+            <th title="Carry">CAR<br />7%</th>
+            <th title="Pass Block">PBK<br />7%</th>
+
+            <th title="Acceleration">ACC<br />5%</th>
+            <th title="Trucking">TRK<br />5%</th>
+            <th title="Catching">CTH<br />4%</th>
+
+            <th title="Strength">STR<br />3%</th>
+            <th title="Agility">AGI<br />3%</th>
+            <th title="Ball Carrier Vision">BCV<br />3%</th>
+            <th title="Stiff Arm">STF<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "FB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+
+                <td>@player.Carry</td>
+                <td>@player.PassBlock</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Trucking</td>
+                <td>@player.Catch</td>
+
+                <td>@player.Strength</td>
+                <td>@player.Agility</td>
+                <td>@player.BallCarrierVision</td>
+                <td>@player.StiffArm</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="WRtable" class="table">
+        <tr>
+            <th>WR</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />12%</th>
+
+            <th title="Awareness">AWR<br />12%</th>
+            <th title="Catching">CTH<br />12%</th>
+            <th title="Route Running">RRN<br />12%</th>
+
+            <th title="Acceleration">ACC<br />8%</th>
+            <th title="Catch In Traffic">CIT<br />8%</th>
+            <th title="Release">REL<br />8%</th>
+
+            <th title="Agility">AGI<br />5%</th>
+            <th title="Carrying">CAR<br />4%</th>
+            <th title="Jumping">JMP<br />4%</th>
+            <th title="Elusiveness">ELU<br />4%</th>
+            <th title="Spectacular Catch">SPC<br />4%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "WR").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Awareness</td>
+                <td>@player.Catch</td>
+                <td>@player.RouteRunning</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.CatchInTraffic</td>
+                <td>@player.Release</td>
+
+                <td>@player.Agility</td>
+                <td>@player.Carry</td>
+                <td>@player.Jump</td>
+                <td>@player.Elusiveness</td>
+                <td>@player.SpectacularCatch</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="TEtable" class="table">
+        <tr>
+            <th>TE</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />7%</th>
+
+            <th title="Run Block">RBK<br />14%</th>
+            <th title="Awareness">AWR<br />12%</th>
+
+            <th title="Catching">CTH<br />9%</th>
+            <th title="Catch In Traffic">CIT<br />9%</th>
+            <th title="Route Running">RRN<br />8%</th>
+            <th title="Strength">STR<br />6%</th>
+            <th title="Impact Block">IBL<br />6%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "TE").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+
+                <td>@player.Catch</td>
+                <td>@player.CatchInTraffic</td>
+                <td>@player.RouteRunning</td>
+                <td>@player.Strength</td>
+                <td>@player.ImpactBlock</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
+<div id="Offensive Line">
+
+    <table id="LTtable" class="table">
+        <tr>
+            <th>LT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Pass Block">PBK<br />36%</th>
+            <th title="Run Block">RBK<br />20%</th>
+            <th title="Awareness">AWR<br />16%</th>
+            <th title="Strength">STR<br />13%</th>
+
+            <th title="Impact Block">IBL<br />8%</th>
+            <th title="Acceleration">ACC<br />3%</th>
+            <th title="Speed">SPD<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "LT").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.PassBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+                <td>@player.Strength</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="LGtable" class="table">
+        <tr>
+            <th>LG</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Pass Block">PBK<br />26%</th>
+            <th title="Run Block">RBK<br />23%</th>
+            <th title="Awareness">AWR<br />18%</th>
+            <th title="Strength">STR<br />12%</th>
+
+            <th title="Impact Block">IBL<br />10%</th>
+            <th title="Acceleration">ACC<br />6%</th>
+            <th title="Speed">SPD<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "LG").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.PassBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+                <td>@player.Strength</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="Ctable" class="table">
+        <tr>
+            <th>C</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Pass Block">PBK<br />25%</th>
+            <th title="Run Block">RBK<br />25%</th>
+            <th title="Awareness">AWR<br />18%</th>
+            <th title="Strength">STR<br />12%</th>
+
+            <th title="Impact Block">IBL<br />9%</th>
+            <th title="Acceleration">ACC<br />5%</th>
+            <th title="Speed">SPD<br />5%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "C").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.PassBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+                <td>@player.Strength</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="RGtable" class="table">
+        <tr>
+            <th>RG</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Pass Block">PBK<br />26%</th>
+            <th title="Run Block">RBK<br />25%</th>
+            <th title="Awareness">AWR<br />18%</th>
+            <th title="Strength">STR<br />12%</th>
+
+            <th title="Impact Block">IBL<br />8%</th>
+            <th title="Acceleration">ACC<br />6%</th>
+            <th title="Speed">SPD<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "RG").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.PassBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+                <td>@player.Strength</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="RTtable" class="table">
+        <tr>
+            <th>RT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Pass Block">PBK<br />24%</th>
+            <th title="Run Block">RBK<br />29%</th>
+            <th title="Awareness">AWR<br />19%</th>
+            <th title="Strength">STR<br />12%</th>
+
+            <th title="Impact Block">IBL<br />9%</th>
+            <th title="Acceleration">ACC<br />3%</th>
+            <th title="Speed">SPD<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "RT").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.PassBlock</td>
+                <td>@player.RunBlock</td>
+                <td>@player.Awareness</td>
+                <td>@player.Strength</td>
+
+                <td>@player.ImpactBlock</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+<div id="Defensive Line">
+
+
+    <table id="LEtable" class="table">
+        <tr>
+            <th>LE</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />10%</th>
+            <th title="Strength">STR<br />5%</th>
+
+            <th title="Power Moves">PMV<br />12%</th>
+            <th title="Finesse Moves">FMV<br />12%</th>
+            <th title="Awareness">AWR<br />11%</th>
+            <th title="Play Recognition">PREC<br />11%</th>
+            
+            <th title="Acceleration">ACC<br />10%</th>
+            <th title="Tackle">TKL<br />10%</th>
+            <th title="Block Shedding">BSHD<br />10%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "LE").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+                <td>@player.Strength</td>
+
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.BlockShed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="DTtable" class="table">
+        <tr>
+            <th>DT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />6%</th>
+            <th title="Strength">STR<br />17%</th>
+
+            <th title="Power Moves">PMV<br />14%</th>
+            <th title="Finesse Moves">FMV<br />10%</th>
+            <th title="Awareness">AWR<br />11%</th>
+            <th title="Play Recognition">PREC<br />11%</th>
+
+            <th title="Acceleration">ACC<br />6%</th>
+            <th title="Tackle">TKL<br />8%</th>
+            <th title="Block Shedding">BSHD<br />12%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "DT").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+                <td>@player.Strength</td>
+
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.BlockShed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="REtable" class="table">
+        <tr>
+            <th>RE</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />10%</th>
+            <th title="Strength">STR<br />5%</th>
+
+            <th title="Power Moves">PMV<br />12%</th>
+            <th title="Finesse Moves">FMV<br />12%</th>
+            <th title="Awareness">AWR<br />11%</th>
+            <th title="Play Recognition">PREC<br />11%</th>
+
+            <th title="Acceleration">ACC<br />10%</th>
+            <th title="Tackle">TKL<br />10%</th>
+            <th title="Block Shedding">BSHD<br />10%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "RE").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+                <td>@player.Strength</td>
+
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.BlockShed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+<div id="Linebackers">
+
+
+    <table id="LOLBtable" class="table">
+        <tr>
+            <th>LOLB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />9%</th>
+
+            <th title="Awareness">AWR<br />13%</th>
+            <th title="Play Recognition">PREC<br />13%</th>
+            <th title="Tackle">TKL<br />10%</th>
+
+            <th title="Block Shedding">BSHD<br />9%</th>
+            <th title="Power Moves">PMV<br />10%</th>
+            <th title="Finesse Moves">FMV<br />6%</th>
+
+            <th title="Strength">STR<br />6%</th>
+            <th title="Acceleration">ACC<br />6%</th>
+            <th title="Pursuit">PUR<br />6%</th>
+
+            <th title="Man Cover">MCV<br />3%</th>
+            <th title="Zone Cover">ZCV<br />5%</th>
+            <th title="Hit Power">HIT<br />2%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "LOLB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+                <td>@player.Tackle</td>
+
+                <td>@player.BlockShed</td>
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+
+                <td>@player.Strength</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.HitPower</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="MLBtable" class="table">
+        <tr>
+            <th>MLB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />8%</th>
+
+            <th title="Awareness">AWR<br />14%</th>
+            <th title="Play Recognition">PREC<br />14%</th>
+            <th title="Tackle">TKL<br />15%</th>
+
+            <th title="Block Shedding">BSHD<br />13%</th>
+            <th title="Power Moves">PMV<br />2%</th>
+            <th title="Finesse Moves">FMV<br />2%</th>
+
+            <th title="Strength">STR<br />4%</th>
+            <th title="Acceleration">ACC<br />4%</th>
+            <th title="Pursuit">PUR<br />9%</th>
+
+            <th title="Man Cover">MCV<br />3%</th>
+            <th title="Zone Cover">ZCV<br />5%</th>
+            <th title="Hit Power">HIT<br />4%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "MLB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+                <td>@player.Tackle</td>
+
+                <td>@player.BlockShed</td>
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+
+                <td>@player.Strength</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.HitPower</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="ROLBtable" class="table">
+        <tr>
+            <th>ROLB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />10%</th>
+
+            <th title="Awareness">AWR<br />13%</th>
+            <th title="Play Recognition">PREC<br />13%</th>
+            <th title="Tackle">TKL<br />10%</th>
+
+            <th title="Block Shedding">BSHD<br />7%</th>
+            <th title="Power Moves">PMV<br />6%</th>
+            <th title="Finesse Moves">FMV<br />10%</th>
+
+            <th title="Strength">STR<br />6%</th>
+            <th title="Acceleration">ACC<br />6%</th>
+            <th title="Pursuit">PUR<br />6%</th>
+
+            <th title="Man Cover">MCV<br />3%</th>
+            <th title="Zone Cover">ZCV<br />5%</th>
+            <th title="Hit Power">HIT<br />3%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "ROLB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+                <td>@player.Tackle</td>
+
+                <td>@player.BlockShed</td>
+                <td>@player.PowerMoves</td>
+                <td>@player.FinesseMoves</td>
+
+                <td>@player.Strength</td>
+                <td>@player.Acceleration</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.HitPower</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+<div id="Defensive Backs">
+
+
+    <table id="CBtable" class="table">
+        <tr>
+            <th>CB</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />14%</th>
+
+            <th title="Man Cover">MCV<br />18%</th>
+            <th title="Zone Cover">ZCV<br />14%</th>
+            <th title="Awareness">AWR<br />10%</th>
+            <th title="Play Recognition">PREC<br />14%</th>
+
+            <th title="Acceleration">ACC<br />14%</th>
+            <th title="Tackle">TKL<br />3%</th>
+            <th title="Pursuit">PUR<br />0%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "CB").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="SStable" class="table">
+        <tr>
+            <th>SS</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />9%</th>
+
+            <th title="Man Cover">MCV<br />5%</th>
+            <th title="Zone Cover">ZCV<br />13%</th>
+            <th title="Awareness">AWR<br />15%</th>
+            <th title="Play Recognition">PREC<br />15%</th>
+
+            <th title="Acceleration">ACC<br />4%</th>
+            <th title="Tackle">TKL<br />11%</th>
+            <th title="Pursuit">PUR<br />9%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "SS").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+    <table id="FStable" class="table">
+        <tr>
+            <th>FS</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Speed">SPD<br />11%</th>
+
+            <th title="Man Cover">MCV<br />7%</th>
+            <th title="Zone Cover">ZCV<br />17%</th>
+            <th title="Awareness">AWR<br />14%</th>
+            <th title="Play Recognition">PREC<br />14%</th>
+
+            <th title="Acceleration">ACC<br />5%</th>
+            <th title="Tackle">TKL<br />10%</th>
+            <th title="Pursuit">PUR<br />5%</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "FS").OrderByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+                <td>@player.Speed</td>
+
+                <td>@player.ManCover</td>
+                <td>@player.ZoneCover</td>
+                <td>@player.Awareness</td>
+                <td>@player.PlayRecognition</td>
+
+                <td>@player.Acceleration</td>
+                <td>@player.Tackle</td>
+                <td>@player.Pursuit</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+<div id="Special Teams">
+
+
+    <table id="KPtable" class="table">
+        <tr>
+            <th>K/P</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+
+            <th title="Kick Power">KPW</th>
+            <th title="Kick Accuracy">KAC</th>
+            <th title="Awareness">AWR</th>
+            <th title="Speed">SPD</th>
+
+            <th title="Development Trait">Dev</th>
+            <th title="Experience Points">XP</th>
+            <th title="Salary">SAL</th>
+            <th title="Bonus">BON</th>
+            <th title="Release Penalty">PEN</th>
+            <th title="Release Net Savings">SAV</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "K" || m.Position == "P").OrderBy(m=>m.Position).ThenByDescending(m => m.Overall))
+        {
+            <tr>
+                <td>@player.Position</td>
+                <td>@player.FirstName.Substring(0, 1) @player.LastName</td>
+                <td>@player.Age</td>
+                <td>@player.Overall</td>
+
+                <td>@player.KickPower</td>
+                <td>@player.KickAccuracy</td>
+                <td>@player.Awareness</td>
+                <td>@player.Speed</td>
+
+                <td>@player.Development</td>
+                <td>@player.XP</td>
+                <td>@player.ContractSalary</td>
+                <td>@player.ContractBonus</td>
+                <td>@player.ContractReleasePenalty</td>
+                <td>@player.ContractReleaseNetSavings</td>
+                <td>@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+
+@*<table class="table">
+    <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>OVR</th>
+        <th>XP</th>
+        <th>Dev</th>
+        <th>Speed</th>
+    </tr>
+    @foreach (var player in Model)
+    {
+        <tr>
+            <td>
+                @player.Position
+            </td>
+            <td>
+                @player.FirstName.Substring(0,1) @player.LastName
+            </td>
+            <td>
+                @player.Age
+            </td>
+            <td>
+                @player.Overall
+            </td>
+            <td>
+                @player.XP
+            </td>
+            <td>
+                @player.Development
+            </td>
+            <td>
+                @player.Speed
+            </td>
+        </tr>
+    }
+
+</table>*@

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 19.25" name="Madden">
+  <DataContextMoniker Name="/MaddenDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5db74b2c-04a7-4fb2-906a-9ba5d5c0c147" absoluteBounds="0.5, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/MaddenDataContext/League" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2f62a4d-31be-4a2c-a6b0-ca10f93d3e04" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df18e3a8-62e2-47b0-867a-90c68f21f182" absoluteBounds="0.5, 2.25, 2, 6.0015283203124987">
+      <DataClassMoniker Name="/MaddenDataContext/Team" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eca6426c-b4fe-44e2-a3d3-05d3f98b3dbc" absoluteBounds="0.515, 2.71, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ce59e63-be1d-430c-a99a-784c9d5a15ba" absoluteBounds="3.125, 0.5, 2, 18.501121419270834">
+      <DataClassMoniker Name="/MaddenDataContext/Player" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b76789a0-e490-49cc-88c9-12cbfdb9cca9" absoluteBounds="3.1399999999999997, 0.96, 1.9700000000000002, 17.941121419270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

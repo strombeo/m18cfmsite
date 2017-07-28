@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaddenDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="League">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LeagueID" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="Weight" Type="Int32" Nullable="false" />
+    <Property Name="Overall" Type="Int32" Nullable="false" />
+    <Property Name="XP" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="YearsPro" Type="Int32" Nullable="false" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="Development" Type="Int32" Nullable="false" />
+    <Property Name="IsFreeAgent" Type="Boolean" Nullable="false" />
+    <Property Name="Scheme" Type="Int32" Nullable="false" />
+    <Property Name="Confidence" Type="Int32" Nullable="false" />
+    <Property Name="ContractSalary" Type="Int64" Nullable="false" />
+    <Property Name="ContractBonus" Type="Int64" Nullable="false" />
+    <Property Name="ContractLength" Type="Int32" Nullable="false" />
+    <Property Name="ContractYearsLeft" Type="Int32" Nullable="false" />
+    <Property Name="ContractCapHit" Type="Int64" Nullable="false" />
+    <Property Name="ContractReleasePenalty" Type="Int64" Nullable="false" />
+    <Property Name="ContractReleaseNetSavings" Type="Int64" Nullable="false" />
+    <Property Name="Awareness" Type="Int32" Nullable="false" />
+    <Property Name="Speed" Type="Int32" Nullable="false" />
+    <Property Name="Acceleration" Type="Int32" Nullable="false" />
+    <Property Name="Agility" Type="Int32" Nullable="false" />
+    <Property Name="Strength" Type="Int32" Nullable="false" />
+    <Property Name="Catch" Type="Int32" Nullable="false" />
+    <Property Name="Jump" Type="Int32" Nullable="false" />
+    <Property Name="KickReturn" Type="Int32" Nullable="false" />
+    <Property Name="Stamina" Type="Int32" Nullable="false" />
+    <Property Name="Injury" Type="Int32" Nullable="false" />
+    <Property Name="Toughness" Type="Int32" Nullable="false" />
+    <Property Name="Durability" Type="Int32" Nullable="false" />
+    <Property Name="Elusiveness" Type="Int32" Nullable="false" />
+    <Property Name="Carry" Type="Int32" Nullable="false" />
+    <Property Name="ThrowPower" Type="Int32" Nullable="false" />
+    <Property Name="ThrowAccuracy" Type="Int32" Nullable="false" />
+    <Property Name="ThrowAccuracyShort" Type="Int32" Nullable="false" />
+    <Property Name="ThrowAccuracyMid" Type="Int32" Nullable="false" />
+    <Property Name="ThrowAccuracyDeep" Type="Int32" Nullable="false" />
+    <Property Name="ThrowOnRun" Type="Int32" Nullable="false" />
+    <Property Name="PlayAction" Type="Int32" Nullable="false" />
+    <Property Name="BallCarrierVision" Type="Int32" Nullable="false" />
+    <Property Name="Trucking" Type="Int32" Nullable="false" />
+    <Property Name="JukeMove" Type="Int32" Nullable="false" />
+    <Property Name="SpinMove" Type="Int32" Nullable="false" />
+    <Property Name="StiffArm" Type="Int32" Nullable="false" />
+    <Property Name="Release" Type="Int32" Nullable="false" />
+    <Property Name="RouteRunning" Type="Int32" Nullable="false" />
+    <Property Name="CatchInTraffic" Type="Int32" Nullable="false" />
+    <Property Name="SpectacularCatch" Type="Int32" Nullable="false" />
+    <Property Name="RunBlock" Type="Int32" Nullable="false" />
+    <Property Name="PassBlock" Type="Int32" Nullable="false" />
+    <Property Name="ImpactBlock" Type="Int32" Nullable="false" />
+    <Property Name="Tackle" Type="Int32" Nullable="false" />
+    <Property Name="HitPower" Type="Int32" Nullable="false" />
+    <Property Name="PlayRecognition" Type="Int32" Nullable="false" />
+    <Property Name="Pursuit" Type="Int32" Nullable="false" />
+    <Property Name="BlockShed" Type="Int32" Nullable="false" />
+    <Property Name="PowerMoves" Type="Int32" Nullable="false" />
+    <Property Name="FinesseMoves" Type="Int32" Nullable="false" />
+    <Property Name="ManCover" Type="Int32" Nullable="false" />
+    <Property Name="ZoneCover" Type="Int32" Nullable="false" />
+    <Property Name="PressCover" Type="Int32" Nullable="false" />
+    <Property Name="KickPower" Type="Int32" Nullable="false" />
+    <Property Name="KickAccuracy" Type="Int32" Nullable="false" />
+    <Property Name="Trait_ALL_Predictable" Type="Int32" Nullable="false" />
+    <Property Name="Trait_ALL_Clutch" Type="Int32" Nullable="false" />
+    <Property Name="Trait_ALL_Penalty" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_CoverBall" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_FightForYards" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_DropOpenPasses" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_FeetInBounds" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_PossesionCatch" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_AggressiveCatch" Type="Int32" Nullable="false" />
+    <Property Name="Trait_OFF_CatchOnTheRun" Type="Int32" Nullable="false" />
+    <Property Name="Trait_QB_ThrowBallAway" Type="Int32" Nullable="false" />
+    <Property Name="Trait_QB_SensePressure" Type="Int32" Nullable="false" />
+    <Property Name="Trait_QB_TightSpiral" Type="Int32" Nullable="false" />
+    <Property Name="Trait_QB_Style" Type="Int32" Nullable="false" />
+    <Property Name="Trait_QB_ForcePass" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_BullRush" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_SwimMove" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_SpinMove" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_HighMotor" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_BigHitter" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_StripBall" Type="Int32" Nullable="false" />
+    <Property Name="Trait_DEF_PlayBall" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeagueID" Type="Int32" Nullable="false" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentYear" Type="Int32" Nullable="false" />
+    <Property Name="CurrentWeek" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Conference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Division" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OverallRating" Type="Int32" Nullable="false" />
+    <Property Name="SalaryCapLimit" Type="Int64" Nullable="false" />
+    <Property Name="SalaryCapSpent" Type="Int64" Nullable="false" />
+    <Property Name="SalaryCapAvailable" Type="Int64" Nullable="false" />
+    <Property Name="Wins" Type="Int32" Nullable="false" />
+    <Property Name="Losses" Type="Int32" Nullable="false" />
+    <Property Name="Ties" Type="Int32" Nullable="false" />
+    <Property Name="PointsFor" Type="Int32" Nullable="false" />
+    <Property Name="PointsAgainst" Type="Int32" Nullable="false" />
+    <Property Name="NetPoints" Type="Int32" Nullable="false" />
+    <Property Name="OFF_TotalYards" Type="Int32" Nullable="false" />
+    <Property Name="OFF_RushYards" Type="Int32" Nullable="false" />
+    <Property Name="OFF_PassYards" Type="Int32" Nullable="false" />
+    <Property Name="DEF_TotalYards" Type="Int32" Nullable="false" />
+    <Property Name="DEF_RushYards" Type="Int32" Nullable="false" />
+    <Property Name="DEF_PashYards" Type="Int32" Nullable="false" />
+    <Property Name="TurnoverDifferential" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MaddenEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Leagues" EntityType="Self.League" />
+    <EntitySet Name="Players" EntityType="Self.Player" />
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+  </EntityContainer>
+</Schema>

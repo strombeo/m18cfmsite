@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Madden.Team>
+@{
+    ViewBag.Title = "Teams";
+}
+
+
+<h2>Teams</h2>
+
+
+@*@{ 
+   @Html.Partial("_TeamsByDivision", Model)
+}*@
+
+
+<div class="AllTeamsDiv">
+    <h3>All Teams</h3>
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Name</th>
+            <th>Overall</th>
+            <th>(W-L-T)</th>
+            <th>Conference</th>
+            <th>Division</th>
+            <th>Username</th>
+            <th>
+
+            </th>
+        </tr>
+        @foreach (var team in Model)
+        {
+            <tr>
+                <td>
+                    @team.City
+                </td>
+                <td>
+                    @Html.ActionLink(team.Name, "Players", "Madden", new { teamId = team.TeamId }, null)
+                </td>
+                <td>
+                    @team.OverallRating
+                </td>
+                <td>
+                    (@team.Wins - @team.Losses - @team.Ties)
+                </td>
+                <td>
+                    @team.Conference
+                </td>
+                <td>
+                    @team.Division
+                </td>
+                <td>
+                    @team.Username
+                </td>
+                <td>
+                    @Html.ActionLink(team.Name, "Players2", "Madden", new { teamId = team.TeamId }, null)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

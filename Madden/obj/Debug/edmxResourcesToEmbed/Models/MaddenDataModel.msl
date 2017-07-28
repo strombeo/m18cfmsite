@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaddenDataModelStoreContainer" CdmEntityContainer="MaddenEntities">
+    <EntitySetMapping Name="Leagues">
+      <EntityTypeMapping TypeName="MaddenDataModel.League">
+        <MappingFragment StoreEntitySet="Leagues">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="MaddenDataModel.Player">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Overall" ColumnName="Overall" />
+          <ScalarProperty Name="XP" ColumnName="XP" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="YearsPro" ColumnName="YearsPro" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="Development" ColumnName="Development" />
+          <ScalarProperty Name="IsFreeAgent" ColumnName="IsFreeAgent" />
+          <ScalarProperty Name="Scheme" ColumnName="Scheme" />
+          <ScalarProperty Name="Confidence" ColumnName="Confidence" />
+          <ScalarProperty Name="ContractSalary" ColumnName="ContractSalary" />
+          <ScalarProperty Name="ContractBonus" ColumnName="ContractBonus" />
+          <ScalarProperty Name="ContractLength" ColumnName="ContractLength" />
+          <ScalarProperty Name="ContractYearsLeft" ColumnName="ContractYearsLeft" />
+          <ScalarProperty Name="ContractCapHit" ColumnName="ContractCapHit" />
+          <ScalarProperty Name="ContractReleasePenalty" ColumnName="ContractReleasePenalty" />
+          <ScalarProperty Name="ContractReleaseNetSavings" ColumnName="ContractReleaseNetSavings" />
+          <ScalarProperty Name="Awareness" ColumnName="Awareness" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Acceleration" ColumnName="Acceleration" />
+          <ScalarProperty Name="Agility" ColumnName="Agility" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Catch" ColumnName="Catch" />
+          <ScalarProperty Name="Jump" ColumnName="Jump" />
+          <ScalarProperty Name="KickReturn" ColumnName="KickReturn" />
+          <ScalarProperty Name="Stamina" ColumnName="Stamina" />
+          <ScalarProperty Name="Injury" ColumnName="Injury" />
+          <ScalarProperty Name="Toughness" ColumnName="Toughness" />
+          <ScalarProperty Name="Durability" ColumnName="Durability" />
+          <ScalarProperty Name="Elusiveness" ColumnName="Elusiveness" />
+          <ScalarProperty Name="Carry" ColumnName="Carry" />
+          <ScalarProperty Name="ThrowPower" ColumnName="ThrowPower" />
+          <ScalarProperty Name="ThrowAccuracy" ColumnName="ThrowAccuracy" />
+          <ScalarProperty Name="ThrowAccuracyShort" ColumnName="ThrowAccuracyShort" />
+          <ScalarProperty Name="ThrowAccuracyMid" ColumnName="ThrowAccuracyMid" />
+          <ScalarProperty Name="ThrowAccuracyDeep" ColumnName="ThrowAccuracyDeep" />
+          <ScalarProperty Name="ThrowOnRun" ColumnName="ThrowOnRun" />
+          <ScalarProperty Name="PlayAction" ColumnName="PlayAction" />
+          <ScalarProperty Name="BallCarrierVision" ColumnName="BallCarrierVision" />
+          <ScalarProperty Name="Trucking" ColumnName="Trucking" />
+          <ScalarProperty Name="JukeMove" ColumnName="JukeMove" />
+          <ScalarProperty Name="SpinMove" ColumnName="SpinMove" />
+          <ScalarProperty Name="StiffArm" ColumnName="StiffArm" />
+          <ScalarProperty Name="Release" ColumnName="Release" />
+          <ScalarProperty Name="RouteRunning" ColumnName="RouteRunning" />
+          <ScalarProperty Name="CatchInTraffic" ColumnName="CatchInTraffic" />
+          <ScalarProperty Name="SpectacularCatch" ColumnName="SpectacularCatch" />
+          <ScalarProperty Name="RunBlock" ColumnName="RunBlock" />
+          <ScalarProperty Name="PassBlock" ColumnName="PassBlock" />
+          <ScalarProperty Name="ImpactBlock" ColumnName="ImpactBlock" />
+          <ScalarProperty Name="Tackle" ColumnName="Tackle" />
+          <ScalarProperty Name="HitPower" ColumnName="HitPower" />
+          <ScalarProperty Name="PlayRecognition" ColumnName="PlayRecognition" />
+          <ScalarProperty Name="Pursuit" ColumnName="Pursuit" />
+          <ScalarProperty Name="BlockShed" ColumnName="BlockShed" />
+          <ScalarProperty Name="PowerMoves" ColumnName="PowerMoves" />
+          <ScalarProperty Name="FinesseMoves" ColumnName="FinesseMoves" />
+          <ScalarProperty Name="ManCover" ColumnName="ManCover" />
+          <ScalarProperty Name="ZoneCover" ColumnName="ZoneCover" />
+          <ScalarProperty Name="PressCover" ColumnName="PressCover" />
+          <ScalarProperty Name="KickPower" ColumnName="KickPower" />
+          <ScalarProperty Name="KickAccuracy" ColumnName="KickAccuracy" />
+          <ScalarProperty Name="Trait_ALL_Predictable" ColumnName="Trait_ALL_Predictable" />
+          <ScalarProperty Name="Trait_ALL_Clutch" ColumnName="Trait_ALL_Clutch" />
+          <ScalarProperty Name="Trait_ALL_Penalty" ColumnName="Trait_ALL_Penalty" />
+          <ScalarProperty Name="Trait_OFF_CoverBall" ColumnName="Trait_OFF_CoverBall" />
+          <ScalarProperty Name="Trait_OFF_FightForYards" ColumnName="Trait_OFF_FightForYards" />
+          <ScalarProperty Name="Trait_OFF_DropOpenPasses" ColumnName="Trait_OFF_DropOpenPasses" />
+          <ScalarProperty Name="Trait_OFF_FeetInBounds" ColumnName="Trait_OFF_FeetInBounds" />
+          <ScalarProperty Name="Trait_OFF_PossesionCatch" ColumnName="Trait_OFF_PossesionCatch" />
+          <ScalarProperty Name="Trait_OFF_AggressiveCatch" ColumnName="Trait_OFF_AggressiveCatch" />
+          <ScalarProperty Name="Trait_OFF_CatchOnTheRun" ColumnName="Trait_OFF_CatchOnTheRun" />
+          <ScalarProperty Name="Trait_QB_ThrowBallAway" ColumnName="Trait_QB_ThrowBallAway" />
+          <ScalarProperty Name="Trait_QB_SensePressure" ColumnName="Trait_QB_SensePressure" />
+          <ScalarProperty Name="Trait_QB_TightSpiral" ColumnName="Trait_QB_TightSpiral" />
+          <ScalarProperty Name="Trait_QB_Style" ColumnName="Trait_QB_Style" />
+          <ScalarProperty Name="Trait_QB_ForcePass" ColumnName="Trait_QB_ForcePass" />
+          <ScalarProperty Name="Trait_DEF_BullRush" ColumnName="Trait_DEF_BullRush" />
+          <ScalarProperty Name="Trait_DEF_SwimMove" ColumnName="Trait_DEF_SwimMove" />
+          <ScalarProperty Name="Trait_DEF_SpinMove" ColumnName="Trait_DEF_SpinMove" />
+          <ScalarProperty Name="Trait_DEF_HighMotor" ColumnName="Trait_DEF_HighMotor" />
+          <ScalarProperty Name="Trait_DEF_BigHitter" ColumnName="Trait_DEF_BigHitter" />
+          <ScalarProperty Name="Trait_DEF_StripBall" ColumnName="Trait_DEF_StripBall" />
+          <ScalarProperty Name="Trait_DEF_PlayBall" ColumnName="Trait_DEF_PlayBall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="MaddenDataModel.Team">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+          <ScalarProperty Name="CurrentWeek" ColumnName="CurrentWeek" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Conference" ColumnName="Conference" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="OverallRating" ColumnName="OverallRating" />
+          <ScalarProperty Name="SalaryCapLimit" ColumnName="SalaryCapLimit" />
+          <ScalarProperty Name="SalaryCapSpent" ColumnName="SalaryCapSpent" />
+          <ScalarProperty Name="SalaryCapAvailable" ColumnName="SalaryCapAvailable" />
+          <ScalarProperty Name="Wins" ColumnName="Wins" />
+          <ScalarProperty Name="Losses" ColumnName="Losses" />
+          <ScalarProperty Name="Ties" ColumnName="Ties" />
+          <ScalarProperty Name="PointsFor" ColumnName="PointsFor" />
+          <ScalarProperty Name="PointsAgainst" ColumnName="PointsAgainst" />
+          <ScalarProperty Name="NetPoints" ColumnName="NetPoints" />
+          <ScalarProperty Name="OFF_TotalYards" ColumnName="OFF_TotalYards" />
+          <ScalarProperty Name="OFF_RushYards" ColumnName="OFF_RushYards" />
+          <ScalarProperty Name="OFF_PassYards" ColumnName="OFF_PassYards" />
+          <ScalarProperty Name="DEF_TotalYards" ColumnName="DEF_TotalYards" />
+          <ScalarProperty Name="DEF_RushYards" ColumnName="DEF_RushYards" />
+          <ScalarProperty Name="DEF_PashYards" ColumnName="DEF_PashYards" />
+          <ScalarProperty Name="TurnoverDifferential" ColumnName="TurnoverDifferential" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
