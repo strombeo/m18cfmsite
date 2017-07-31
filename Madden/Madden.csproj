@@ -280,8 +280,8 @@
     <Content Include="Views\Madden\Leagues.cshtml" />
     <Content Include="Views\Madden\Teams.cshtml" />
     <Content Include="Views\Madden\Players.cshtml" />
-    <Content Include="Views\Madden\_TeamsByDivision.cshtml" />
-    <Content Include="Views\Madden\Players2.cshtml" />
+    <Content Include="Views\Madden\TeamPlayers.cshtml" />
+    <Content Include="Views\Madden\LeaguePlayers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

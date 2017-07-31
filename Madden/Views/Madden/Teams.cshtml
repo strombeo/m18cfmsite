@@ -1,61 +1,53 @@
 ﻿@model IEnumerable<Madden.Team>
 @{
     ViewBag.Title = "Teams";
+    string[] conferenceNames = { "NFC", "AFC" };
+    string[] divisionNames = { "North", "South", "East", "West" };
+
+    string[] oPositions = { "QB", "HB", "FB", "WR", "TE", "LT", "LG", "C", "RG", "RT", "K" };
+    string[] dPositions = { "LE", "DT", "RE", "LOLB", "MLB", "ROLB", "CB", "SS", "FS", "P" };
 }
 
+<h2>@ViewBag.LeagueId Teams</h2>
 
-<h2>Teams</h2>
+<div id="Positions">
+    @foreach (string position in oPositions)
+    {
+        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position }, null)
+    }
+    @foreach (string position in dPositions)
+    {
+        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position }, null)
+    }
+</div>
 
-
-@*@{ 
-   @Html.Partial("_TeamsByDivision", Model)
-}*@
-
-
-<div class="AllTeamsDiv">
-    <h3>All Teams</h3>
-    <table>
-        <tr>
-            <th>City</th>
-            <th>Name</th>
-            <th>Overall</th>
-            <th>(W-L-T)</th>
-            <th>Conference</th>
-            <th>Division</th>
-            <th>Username</th>
-            <th>
-
-            </th>
-        </tr>
-        @foreach (var team in Model)
-        {
-            <tr>
-                <td>
-                    @team.City
-                </td>
-                <td>
-                    @Html.ActionLink(team.Name, "Players", "Madden", new { teamId = team.TeamId }, null)
-                </td>
-                <td>
-                    @team.OverallRating
-                </td>
-                <td>
-                    (@team.Wins - @team.Losses - @team.Ties)
-                </td>
-                <td>
-                    @team.Conference
-                </td>
-                <td>
-                    @team.Division
-                </td>
-                <td>
-                    @team.Username
-                </td>
-                <td>
-                    @Html.ActionLink(team.Name, "Players2", "Madden", new { teamId = team.TeamId }, null)
-                </td>
-            </tr>
-        }
-
-    </table>
+<div class="teamsDiv">
+    @foreach (string confName in conferenceNames)
+    {
+        <div class="flex-container">
+            @foreach (string divName in divisionNames)
+            {
+                string assembledName = confName + " " + divName;
+                <div class="flex-item">
+                    <table class="divisionalStandings">
+                        <thead>
+                            <tr class="heading">
+                                <td class="standingsCell">@assembledName</td>
+                                <td class="standingsCell">Record</td>
+                            </tr>
+                        </thead>
+                        @foreach (var team in Model.Where(m => m.Division == assembledName).OrderByDescending(m => m.Wins).ThenBy(m => m.Losses))
+                        {
+                            <tr>
+                                <td class="standingsCell">
+                                    @Html.ActionLink(team.Name, "TeamPlayers", "Madden", new { leagueId = ViewBag.LeagueId, teamId = team.TeamId }, null)
+                                </td>
+                                <td class="standingsCell">(@team.Wins-@team.Losses-@team.Ties)</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            }
+        </div>
+    }
 </div>

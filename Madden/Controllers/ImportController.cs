@@ -39,7 +39,7 @@ namespace Madden.Controllers
                     // there should be more elegant history done here...  
                     // but for now just remove all teams from this league and re-add them
 
-                    // Remove all of the teams from the DB
+                    // Remove all of the teams from the DB for this League
                     db.Teams.DeleteAllOnSubmit(db.Teams.Where(m => m.LeagueID == leagueId));
                     db.SubmitChanges();
 
@@ -99,7 +99,7 @@ namespace Madden.Controllers
                     // there should be more elegant history done here...  
                     // but for now just remove all players from this league and re-add them
 
-                    // Remove all of the players from the DB
+                    // Remove all of the players from the DB for this League
                     db.Players.DeleteAllOnSubmit(db.Players.Where(m => m.LeagueID == leagueId));
                     db.SubmitChanges();
                     
@@ -140,10 +140,10 @@ namespace Madden.Controllers
         private void ImportTeam(int leagueId, Models.ImportModels.ImportTeam importTeam)
         {
             // does this team already exist?
-            if (db.Teams.Any(m => m.TeamId == importTeam.teamId))
+            if (db.Teams.Any(m => m.LeagueID == leagueId && m.TeamId == importTeam.teamId))
             {
                 // this team already exists, so we need to update it
-                var team = db.Teams.Where(m => m.TeamId == importTeam.teamId).Single();
+                var team = db.Teams.Where(m => m.LeagueID == leagueId && m.TeamId == importTeam.teamId).Single();
 
                 #region Assign Team Properties
                 // General Info
@@ -251,7 +251,7 @@ namespace Madden.Controllers
         private void ImportPlayer(int leagueId, Models.ImportModels.ImportPlayer import)
         {
             // does this player already exist?
-            if (db.Players.Any(m => m.PlayerId == import.rosterId))
+            if (db.Players.Any(m => m.LeagueID == leagueId && m.PlayerId == import.rosterId))
             {
                 // this player already exists, so we need to update it
                 var player = db.Players.Where(m => m.PlayerId == import.rosterId).Single();

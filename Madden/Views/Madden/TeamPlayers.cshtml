@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Madden.Player>
+@{
+    ViewBag.Title = ViewBag.TeamName + " Depth Chart";
+
+    string[] oSkill = { "QB", "HB", "FB", "WR", "TE", };
+    string[] line = { "LT", "LG", "C", "RG", "RT", "LE", "DT", "RE" };
+    string[] dSkill = { "LOLB", "MLB", "ROLB", "CB", "SS", "FS" };
+}
+
+<h2>@ViewBag.TeamId Team Players</h2>
+
+<table id="Offensive Skill Positions">
+    <tr>
+        <th>Pos</th>
+        <th>Name</th>
+        <th class="statHead">Age</th>
+        <th class="statHead" title="Overall">OVR</th>
+        <th class="statHead" title="Speed">SPD</th>
+        <th class="statHead" title="Development Trait">Dev</th>
+        <th class="statHead" title="Years Left on Current Contract">YRS</th>
+    </tr>
+    @for (int i = 0; i < oSkill.Length; i++)
+    {
+        foreach (var player in Model.Where(m => m.Position == oSkill[i]).OrderByDescending(m => m.Overall))
+        {
+            <tr class="playerRow">
+                <td class="positionCol">@player.Position</td>
+                <td class="nameCol">
+                    <span class="firstName">@player.FirstName.Substring(0,1)</span>
+                    <span class="lastName">@player.LastName</span>
+                </td>
+                <td class="statCol">@player.Age</td>
+                <td class="statCol">@player.Overall</td>
+                <td class="statCol">@player.Speed</td>
+                <td class="statCol">@player.Development</td>
+                <td class="statCol">@player.ContractYearsLeft</td>
+            </tr>
+        }
+        <tr> <td>-</td> </tr>
+    }
+</table>
+
+
+<table id="Line">
+    <tr>
+        <th>Pos</th>
+        <th>Name</th>
+        <th class="statHead">Age</th>
+        <th class="statHead" title="Overall">OVR</th>
+        <th class="statHead" title="Strength">STR</th>
+        <th class="statHead" title="Development Trait">Dev</th>
+        <th class="statHead" title="Years Left on Current Contract">YRS</th>
+    </tr>
+    @for (int i = 0; i < line.Length; i++)
+    {
+        foreach (var player in Model.Where(m => m.Position == line[i]).OrderByDescending(m => m.Overall))
+        {
+            <tr class="playerRow">
+                <td class="positionCol">@player.Position</td>
+                <td class="nameCol">
+                    <span class="firstName">@player.FirstName.Substring(0, 1)</span>
+                    <span class="lastName">@player.LastName</span>
+                </td>
+                <td class="statCol">@player.Age</td>
+                <td class="statCol">@player.Overall</td>
+                <td class="statCol">@player.Strength</td>
+                <td class="statCol">@player.Development</td>
+                <td class="statCol">@player.ContractYearsLeft</td>
+            </tr>
+        }
+        <tr> <td>-</td> </tr>
+    }
+</table>
+
+
+<table id="Defensive Skill Positions">
+    <tr>
+        <th>Pos</th>
+        <th>Name</th>
+        <th class="statHead">Age</th>
+        <th class="statHead" title="Overall">OVR</th>
+        <th class="statHead" title="Speed">SPD</th>
+        <th class="statHead" title="Development Trait">Dev</th>
+        <th class="statHead" title="Years Left on Current Contract">YRS</th>
+    </tr>
+    @for (int i = 0; i < dSkill.Length; i++)
+    {
+        foreach (var player in Model.Where(m => m.Position == dSkill[i]).OrderByDescending(m => m.Overall))
+        {
+            <tr class="playerRow">
+                <td class="positionCol">@player.Position</td>
+                <td class="nameCol">
+                    <span class="firstName">@player.FirstName.Substring(0, 1)</span>
+                    <span class="lastName">@player.LastName</span>
+                </td>
+                <td class="statCol">@player.Age</td>
+                <td class="statCol">@player.Overall</td>
+                <td class="statCol">@player.Speed</td>
+                <td class="statCol">@player.Development</td>
+                <td class="statCol">@player.ContractYearsLeft</td>
+            </tr>
+        }
+        <tr> <td>-</td> </tr>
+    }
+</table>
+
+
+<div id="Special Teams">
+
+
+    <table id="KPtable" class="table">
+        <tr>
+            <th>K/P</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th title="Overall">OVR</th>
+            <th title="Kick Power">KPW</th>
+            <th title="Kick Accuracy">KAC</th>
+            <th title="Development Trait">Dev</th>
+            <th title="Years Left on Current Contract">YRS</th>
+        </tr>
+        @foreach (var player in Model.Where(m => m.Position == "K" || m.Position == "P").OrderBy(m => m.Position).ThenByDescending(m => m.Overall))
+        {
+            <tr class="playerRow">
+                <td class="positionCol">@player.Position</td>
+                <td class="nameCol">
+                    <span class="firstName">@player.FirstName.Substring(0, 1)</span>
+                    <span class="lastName">@player.LastName</span>
+                </td>
+                <td class="statCol">@player.Age</td>
+                <td class="statCol">@player.Overall</td>
+                <td class="statCol">@player.KickPower</td>
+                <td class="statCol">@player.KickAccuracy</td>
+                <td class="statCol">@player.Development</td>
+                <td class="statCol">@player.ContractYearsLeft</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
