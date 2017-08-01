@@ -9,13 +9,13 @@
     <tr>
         <th>Pos</th>
         <th>Name</th>
-        <th class="statHead">Age</th>
-        <th class="statHead" title="Overall">OVR</th>
-        <th class="statHead" title="Speed">SPD</th>
-        <th class="statHead" title="Development Trait">Dev</th>
-        <th class="statHead" title="Years Left on Current Contract">YRS</th>
+        <th class="statHead">@Html.ActionLink("Age", "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = ViewBag.Position, sortBy = "Age", currentSortDirection = ViewBag.SortDirection }, null)</th>
+        <th class="statHead" title="Overall">@Html.ActionLink("OVR", "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = ViewBag.Position, sortBy = "Overall", currentSortDirection = ViewBag.SortDirection }, null)</th>
+        <th class="statHead" title="Speed">@Html.ActionLink("SPD", "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = ViewBag.Position, sortBy = "Speed", currentSortDirection = ViewBag.SortDirection }, null)</th>
+        <th class="statHead" title="Development Trait">@Html.ActionLink("DEV", "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = ViewBag.Position, sortBy = "Development", currentSortDirection = ViewBag.SortDirection }, null)</th>
+        <th class="statHead" title="Years Left on Current Contract">@Html.ActionLink("YRS", "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = ViewBag.Position, sortBy = "ContractYearsLeft", currentSortDirection = ViewBag.SortDirection }, null)</th>
     </tr>
-    @foreach (var player in Model.OrderByDescending(m => m.Overall))
+    @foreach (var player in Model)
     {
         <tr class="playerRow">
             <td class="positionCol">@player.Position</td>

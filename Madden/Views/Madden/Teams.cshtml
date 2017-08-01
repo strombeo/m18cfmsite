@@ -13,11 +13,11 @@
 <div id="Positions">
     @foreach (string position in oPositions)
     {
-        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position }, null)
+        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position, sortBy = "Overall" }, null)
     }
     @foreach (string position in dPositions)
     {
-        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position }, null)
+        @Html.ActionLink(position, "LeaguePlayers", "Madden", new { leagueId = ViewBag.LeagueId, position = position, sortBy = "Overall" }, null)
     }
 </div>
 
